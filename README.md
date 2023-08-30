@@ -68,6 +68,44 @@ export default function Home () {
     )
 }
 ```
+4. Create an "about" page named `about.js` with the following:
+```
+export default function About () {
+    return (
+        <div>
+            <h1>About Page</h1>
+            <p>Blah Blah Blah Blah</p>
+        </div>
+    )
+}
+```
+4. Add a link to the About page the following:
+```
+import Link from 'next/link'
+
+export default function Home () {
+    return (
+        <div>
+            <h1>Welcome to Nextjs</h1>
+            <p>Blah Blah Blah Blah</p>
+            <Link href="/about">Back</Link>
+        </div>
+    )
+}
+```
+5. Add a link back to the Home page the following:
+```
+import Link from 'next/link'
+
+export default function About () {
+    return (
+        <div>
+            <h1>About Page</h1>
+            <p>Blah Blah Blah Blah</p>
+            <Link href="/">Back</Link>
+        </div>
+    )
+}
 
 ## Verify that the App was created   
 1. Use the command 'npm run dev'.   
