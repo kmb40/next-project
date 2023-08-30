@@ -55,7 +55,7 @@ These are the tools used to conduct this research and development.
 
 # Create the Next App
 1. Create a directory named "pages".   
-2. Within that directory, create a file name 'index.js'.
+2. Within that directory, create a file name `index.js`.    
    **Note:** If autosave isn't being used, these changes will beed to be manually saved locally before taking affect.   
 3. Populate the index.js page with the following:
 ```
@@ -68,6 +68,7 @@ export default function Home () {
     )
 }
 ```
+## Create links between pages
 4. Create an "about" page named `about.js` with the following:
 ```
 export default function About () {
@@ -106,8 +107,9 @@ export default function About () {
         </div>
     )
 }
+```
 
 ## Verify that the App was created   
-1. Use the command 'npm run dev'.   
+1. Use the command `npm run dev`.   
 2. Open a browser window to the path http://localhost:3000 or click the path which should be dispolayed in the terminal.
 3. If this worked and you can see the html created in the prior section, then Nextjs is installed and working properly.     
