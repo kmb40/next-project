@@ -4,7 +4,7 @@ Nextjs Research and Development
 # Objective    
 The purpose of this repo is research and development with NextJS. 
 
-# Environement and Preparation used for this event   
+# Environment and Preparation used for this event   
 These are the tools used to conduct this research and development. 
 
 ## Hardware
@@ -68,6 +68,11 @@ export default function Home () {
     )
 }
 ```
+### Verify that the App was created   
+1. Use the command `npm run dev`.   
+2. Open a browser window to the path http://localhost:3000 or click the path which should be dispolayed in the terminal.
+3. If this worked and you can see the html created in the prior section, then Nextjs is installed and working properly.   
+
 ## Create links between pages
 4. Create an "about" page named `about.js` with the following:
 ```
@@ -107,9 +112,4 @@ export default function About () {
         </div>
     )
 }
-```
-
-## Verify that the App was created   
-1. Use the command `npm run dev`.   
-2. Open a browser window to the path http://localhost:3000 or click the path which should be dispolayed in the terminal.
-3. If this worked and you can see the html created in the prior section, then Nextjs is installed and working properly.     
+```  
