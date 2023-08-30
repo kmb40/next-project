@@ -51,26 +51,25 @@ These are the tools used to conduct this research and development.
   }
 }
 
-```
-
+```   
 
 # Create the Next App
 1. Create a directory named "pages".   
 2. Within that directory, create a file name 'index.js'.
-3. Navigate into the directory using 'cd "your-app"'.   
-   **Note:** At any time you can verify that you are in the correct directory using `pwd` at the command.   
-3. Create a React project using the command 'npx create-react-app your-app'.   
-   **Note:** The installation may take some time. Also, note that a large number of files that are not required will be created by default when this method is used.   
+   **Note:** If autosave isn't being used, these changes will beed to be manually saved locally before taking affect.   
+3. Populate the index.js page with the following:
+```
+export default function Home () {
+    return (
+        <div>
+            <h1>Welcome to Nextjs</h1>
+            <p>Blah Blah Blah Blah</p>
+        </div>
+    )
+}
+```
 
-## Verify that the project was created   
-1. Use the command 'npm start'.   
-2. A browser window should open - to the path http://localhost:3000 in the url field displaying the React logo and a link named "Learn React". If not, then repeat the steps carefully.   
-3. React is installed and working properly.     
-   **Note:** A large number of files that are not required will be created by default when this method is used.[Vite offers an alternative smaller installation](#alternative-installation-with-vite)   
-
-## Alternative project creation with Vite
-1. Follow the above instructions for [Install Node.js and NPM (Node Package Manager)](#create-the-react-app-see-the-alternative-installation-with-vite-for-a-faster-installation).    
-2. To install Vite, use 'npm create vite@latest' at the command line.   
-3. Select "React" --> "Javascript + SWC" (SWC is also a transpiler for JavaScript, it is written in Rust and is much faster than Babel.)   
-4. The installation should be completed in seconds.   
-5. Make sure that you are in the project directory then run 'npm install', then 'npm run dev'. 
+## Verify that the App was created   
+1. Use the command 'npm run dev'.   
+2. Open a browser window to the path http://localhost:3000 or click the path which should be dispolayed in the terminal.
+3. If this worked and you can see the html created in the prior section, then Nextjs is installed and working properly.     
