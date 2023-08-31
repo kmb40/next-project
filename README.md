@@ -26,7 +26,7 @@ These are the tools used to conduct this research and development.
 1. Confirm installation with `node -v` and `npm -v` at the command line.   
     **Note:** Node and NPM are required or the following steps will not work!
 
-* [# Install Nextjs](#)
+* [Install Nextjs](/docs/install-Next-js.md)
 # Install Nextjs
 1. Create package.json files using command `npm init -y``. 
 2. Install Nextjs using 'npm install next react react-dom'.
