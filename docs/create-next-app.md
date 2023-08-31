@@ -132,3 +132,70 @@ export default function App({Component, pageProps}) {
 }
 ```
 **Note:** Additional guidance on layouts can be found at [Nextjs.org Docs](https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts)
+
+## Build Navigation
+1. In _app.js, import `next/link` and update the code to relfect new data for the header place holder. 
+2. Add a header tag.
+3. Add a nav tag and leverage the nav class using `className="header-nav"`.
+4. Add an unordered list and two items for your home and about pages.
+5. Your code should reflect the following.
+```
+import "../styles/global.css"
+import Link from 'next/link'
+
+export default function App({Component, pageProps}) {
+  return (
+  <>
+    <div>
+        <h1>Your Site</h1>
+        <nav className="header-nav">
+            <ul>
+                <l1>
+                   <Link href="/">Home</Link>
+                </l1>
+                <l1>
+                   <Link href="/about">About</Link>
+                </l1>
+            </ul>
+        </nav>
+    </div>
+    <Component {...pageProps} />
+    <p>Footer here</p>
+  </>
+  )
+}
+```
+### Highlight active link
+1. Import useRouter by adding `import {useRouter} from 'next/router'`. The useRouter hook allows you to programmatically change routes inside Client Components. 
+2. Add `const router = useRouter()`. const is a variable that once it has been created, its value can never change.
+3. Add `{router.pathname == "/" ? "active" : ""}` which highlights the active link.
+
+```
+import "../styles/global.css"
+import Link from 'next/link'
+import {useRouter} from 'next/router'
+
+export default function App({Component, pageProps}) {
+  const router = useRouter()
+
+  return (
+  <>
+    <div>
+        <h1>Your Site</h1>
+        <nav className="header-nav">
+            <ul>
+                <l1>
+                   <Link className = {router.pathname == "/" ? "active" : ""} href="/">Home</Link>
+                </l1>
+                <l1>
+                   <Link className = {router.pathname == "/about" ? "active" : ""} href="/about">About</Link>
+                </l1>
+            </ul>
+        </nav>
+    </div>
+    <Component {...pageProps} />
+    <p>Footer here</p>
+  </>
+  )
+}
+```

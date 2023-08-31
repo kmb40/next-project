@@ -30,7 +30,3 @@ These are the tools used to conduct this research and development.
 * [Install Nextjs](/docs/install-Next-js.md)
 * [Create the Next App](/docs/create-next-app.md)
 * [Install Nextjs](/docs/install-Next-js.md)
-* [Install Nextjs](/docs/install-Next-js.md)
-* [Install Nextjs](/docs/install-Next-js.md)
-* [Install Nextjs](/docs/install-Next-js.md)
-
