@@ -1,5 +1,5 @@
 # Install Nextjs
-1. Create package.json files using command `npm init -y``. 
+1. Create package.json files using command `npm init -y`. 
 2. Install Nextjs using 'npm install next react react-dom'.
 3. In the package.json file, replace the "script section with". You should see something that looks like the following:
 ```
