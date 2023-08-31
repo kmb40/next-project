@@ -15,7 +15,10 @@ export default function App({Component, pageProps}) {
                    <Link className={router.pathname == "/" ? "active" : ""} href="/">Home</Link>
                 </l1>
                 <l1>
-                   <Link className={router.pathname == "/about" ? "active" : ""} href="/about">About</Link>
+                   <Link className = {router.pathname == "/about" ? "active" : ""} href="/about">About</Link>
+                </l1>
+                <l1>
+                   <Link className={router.pathname == "/blog" ? "active" : ""} href="/blog">Blog</Link>
                 </l1>
             </ul>
         </nav>

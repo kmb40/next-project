@@ -187,8 +187,11 @@ export default function App({Component, pageProps}) {
                 <l1>
                    <Link className = {router.pathname == "/" ? "active" : ""} href="/">Home</Link>
                 </l1>
-                <l1>
+                 <l1>
                    <Link className = {router.pathname == "/about" ? "active" : ""} href="/about">About</Link>
+                </l1>
+                <l1>
+                   <Link className = {router.pathname == "/blog" ? "active" : ""} href="/blog">Blog</Link>
                 </l1>
             </ul>
         </nav>
@@ -197,5 +200,92 @@ export default function App({Component, pageProps}) {
     <p>Footer here</p>
   </>
   )
+}
+```
+## Add a Blog link
+1. Create a page named "blog.js".
+2. Add the following code:
+```
+import Link from 'next/link'
+
+export default function Blog () {
+    return (
+        <div>
+            <h1>Blog Page</h1>
+            <p>Blah Blah Blah Blah</p>
+            <Link href="/">Home</Link>
+        </div>
+    )
+}
+```  
+3. In the `_app.js` file, add an li tag and reformat it for a blog as follows:
+```
+import "../styles/global.css"
+import Link from 'next/link'
+import {useRouter} from 'next/router'
+
+export default function App({Component, pageProps}) {
+  const router = useRouter()
+
+  return (
+  <>
+    <div>
+        <h1>Your Site</h1>
+        <nav className="header-nav">
+            <ul>
+                <l1>
+                   <Link className={router.pathname == "/" ? "active" : ""} href="/">Home</Link>
+                </l1>
+                <l1>
+                   <Link className = {router.pathname == "/about" ? "active" : ""} href="/about">About</Link>
+                </l1>
+                <l1>
+                   <Link className={router.pathname == "/blog" ? "active" : ""} href="/blog">Blog</Link>
+                </l1>
+            </ul>
+        </nav>
+    </div>
+    <Component {...pageProps} />
+    <p>Footer here</p>
+  </>
+  )
+}
+```
+4. Your preview / dev page at localhost:3000 should show a navigation menu with working links that are highlighted when active. 
+
+## Add a more complex blog page
+1. Add the following code to your `blog.js` page:
+```
+import Link from "next/link"
+
+export default function Blog(props) {
+  return (
+    <>
+      <h2>The Blog</h2>
+      {props.posts.map((post, index) => {
+        return (
+          <div key={index}>
+            <h3>
+              <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+            </h3>
+            <p>{post.content}</p>
+            <hr />
+          </div>
+        )
+      })}
+    </>
+  )
+}
+
+// Pulls data from outside of app
+export async function getStaticProps() {
+  const response = await fetch("https://learnwebcode.github.io/json-example/posts.json")
+  const data = await response.json()
+
+  return {
+    props: {
+      posts: data.posts
+    }
+  }
 }
 ```
